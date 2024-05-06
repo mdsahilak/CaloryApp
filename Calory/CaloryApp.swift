@@ -25,7 +25,15 @@ struct CaloryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("Hello World")
+                .task {
+                    do {
+                        let items = try await NutritionService.fetchNutritionInfo(for: "biryani")
+                        print(items)
+                    } catch {
+                        print(error as NSError)
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
     }

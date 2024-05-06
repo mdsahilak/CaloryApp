@@ -26,7 +26,7 @@ final class NutritionService {
         
         guard let url = components.url else { throw APIError.invalidURL }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await session.data(from: url)
         
         let infos = try JSONDecoder().decode([NutritionInfo].self, from: data)
         
