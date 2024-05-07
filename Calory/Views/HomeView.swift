@@ -10,16 +10,20 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var meals: [MealEntry]
+    @Query private var meals: [FoodEntry]
+    
+    @State private var showMealBuilder: Bool = false
     
     var body: some View {
         NavigationSplitView {
             List {
                 ForEach(meals) { meal in
                     NavigationLink {
-                        Text(meal.food.first?.name ?? "-")
+                        VStack {
+                            Text(meal.debugInfo)
+                        }
                     } label: {
-                        Text(meal.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(meal.name)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -35,6 +39,9 @@ struct HomeView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showMealBuilder, content: {
+                AddFood()
+            })
         } detail: {
             Text("Please select an item")
         }
@@ -42,8 +49,9 @@ struct HomeView: View {
     
     private func addItem() {
         withAnimation {
-            let newMeal = MealEntry(type: .breakfast, food: [])
-            modelContext.insert(newMeal)
+//            let newMeal = MealEntry(type: .breakfast, food: [])
+//            modelContext.insert(newMeal)
+            showMealBuilder.toggle()
         }
     }
 
@@ -58,4 +66,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .modelContainer(for: FoodEntry.self, inMemory: true)
 }
