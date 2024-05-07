@@ -12,7 +12,7 @@ import SwiftData
 struct CaloryApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            FoodEntry.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,18 @@ struct CaloryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .onAppear {
+                    print(URL.applicationSupportDirectory)
+                }
+                .task {
+                    do {
+                        let items = try await NutritionService.fetchNutritionInfo(for: "biryani")
+                        print(items)
+                    } catch {
+                        print(error as NSError)
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
     }

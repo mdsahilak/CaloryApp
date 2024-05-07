@@ -12,6 +12,14 @@
 		BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBE2BE927A70051ED40 /* Item.swift */; };
 		BAF9EDC12BE927A80051ED40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC02BE927A80051ED40 /* Assets.xcassets */; };
 		BAF9EDC42BE927A80051ED40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC32BE927A80051ED40 /* Preview Assets.xcassets */; };
+		BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD12BE945EF0051ED40 /* NutritionService.swift */; };
+		BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */; };
+		BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD52BE94F1D0051ED40 /* APIError.swift */; };
+		BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD72BE985D50051ED40 /* HomeView.swift */; };
+		BAF9EDDB2BEA79B50051ED40 /* FoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */; };
+		BAF9EDDF2BEA7E170051ED40 /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDE2BEA7E170051ED40 /* MealType.swift */; };
+		BAF9EDE32BEA81700051ED40 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE22BEA81700051ED40 /* AddFood.swift */; };
+		BAF9EDE52BEA81F40051ED40 /* FoodEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE42BEA81F40051ED40 /* FoodEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		BAF9EDC52BE927A80051ED40 /* Calory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calory.entitlements; sourceTree = "<group>"; };
 		BAF9EDC62BE927A80051ED40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF9EDCC2BE927FD0051ED40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BAF9EDD12BE945EF0051ED40 /* NutritionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionService.swift; sourceTree = "<group>"; };
+		BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionInfo.swift; sourceTree = "<group>"; };
+		BAF9EDD52BE94F1D0051ED40 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		BAF9EDD72BE985D50051ED40 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntry.swift; sourceTree = "<group>"; };
+		BAF9EDDE2BEA7E170051ED40 /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
+		BAF9EDE22BEA81700051ED40 /* AddFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFood.swift; sourceTree = "<group>"; };
+		BAF9EDE42BEA81F40051ED40 /* FoodEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +74,10 @@
 			isa = PBXGroup;
 			children = (
 				BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */,
-				BAF9EDBC2BE927A70051ED40 /* ContentView.swift */,
-				BAF9EDBE2BE927A70051ED40 /* Item.swift */,
+				BAF9EDDC2BEA7ABB0051ED40 /* Views */,
+				BAF9EDD92BEA790B0051ED40 /* Models */,
+				BAF9EDCE2BE943B20051ED40 /* Networking */,
+				BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */,
 				BAF9EDC02BE927A80051ED40 /* Assets.xcassets */,
 				BAF9EDC52BE927A80051ED40 /* Calory.entitlements */,
 				BAF9EDC62BE927A80051ED40 /* Info.plist */,
@@ -74,6 +92,44 @@
 				BAF9EDC32BE927A80051ED40 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BAF9EDCE2BE943B20051ED40 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD12BE945EF0051ED40 /* NutritionService.swift */,
+				BAF9EDD52BE94F1D0051ED40 /* APIError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BAF9EDD92BEA790B0051ED40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */,
+				BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */,
+				BAF9EDDE2BEA7E170051ED40 /* MealType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAF9EDDC2BEA7ABB0051ED40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
+				BAF9EDE22BEA81700051ED40 /* AddFood.swift */,
+				BAF9EDE42BEA81F40051ED40 /* FoodEditor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDBC2BE927A70051ED40 /* ContentView.swift */,
+				BAF9EDBE2BE927A70051ED40 /* Item.swift */,
+			);
+			path = Boilerplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF9EDE32BEA81700051ED40 /* AddFood.swift in Sources */,
+				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,
+				BAF9EDDF2BEA7E170051ED40 /* MealType.swift in Sources */,
+				BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */,
 				BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */,
 				BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */,
+				BAF9EDDB2BEA79B50051ED40 /* FoodEntry.swift in Sources */,
+				BAF9EDE52BEA81F40051ED40 /* FoodEditor.swift in Sources */,
 				BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */,
+				BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */,
+				BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
