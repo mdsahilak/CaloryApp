@@ -16,6 +16,8 @@
 		BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */; };
 		BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD52BE94F1D0051ED40 /* APIError.swift */; };
 		BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD72BE985D50051ED40 /* HomeView.swift */; };
+		BAF9EDDB2BEA79B50051ED40 /* MealEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDA2BEA79B50051ED40 /* MealEntry.swift */; };
+		BAF9EDDF2BEA7E170051ED40 /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDE2BEA7E170051ED40 /* MealType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionInfo.swift; sourceTree = "<group>"; };
 		BAF9EDD52BE94F1D0051ED40 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BAF9EDD72BE985D50051ED40 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BAF9EDDA2BEA79B50051ED40 /* MealEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntry.swift; sourceTree = "<group>"; };
+		BAF9EDDE2BEA7E170051ED40 /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +69,11 @@
 		BAF9EDB92BE927A70051ED40 /* Calory */ = {
 			isa = PBXGroup;
 			children = (
-				BAF9EDCE2BE943B20051ED40 /* Networking */,
 				BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */,
-				BAF9EDBC2BE927A70051ED40 /* ContentView.swift */,
-				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
-				BAF9EDBE2BE927A70051ED40 /* Item.swift */,
+				BAF9EDDC2BEA7ABB0051ED40 /* Views */,
+				BAF9EDD92BEA790B0051ED40 /* Models */,
+				BAF9EDCE2BE943B20051ED40 /* Networking */,
+				BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */,
 				BAF9EDC02BE927A80051ED40 /* Assets.xcassets */,
 				BAF9EDC52BE927A80051ED40 /* Calory.entitlements */,
 				BAF9EDC62BE927A80051ED40 /* Info.plist */,
@@ -91,9 +95,35 @@
 			children = (
 				BAF9EDD12BE945EF0051ED40 /* NutritionService.swift */,
 				BAF9EDD52BE94F1D0051ED40 /* APIError.swift */,
-				BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		BAF9EDD92BEA790B0051ED40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */,
+				BAF9EDDA2BEA79B50051ED40 /* MealEntry.swift */,
+				BAF9EDDE2BEA7E170051ED40 /* MealType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAF9EDDC2BEA7ABB0051ED40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDBC2BE927A70051ED40 /* ContentView.swift */,
+				BAF9EDBE2BE927A70051ED40 /* Item.swift */,
+			);
+			path = Boilerplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,9 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,
+				BAF9EDDF2BEA7E170051ED40 /* MealType.swift in Sources */,
 				BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */,
 				BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */,
 				BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */,
+				BAF9EDDB2BEA79B50051ED40 /* MealEntry.swift in Sources */,
 				BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */,
 				BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */,
 				BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */,
