@@ -25,7 +25,7 @@ struct CaloryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Text("Hello World")
+            HomeView()
                 .task {
                     do {
                         let items = try await NutritionService.fetchNutritionInfo(for: "biryani")

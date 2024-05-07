@@ -28,7 +28,8 @@ final class NutritionService {
         
         let (data, _) = try await session.data(from: url)
         
-        let infos = try JSONDecoder().decode([NutritionInfo].self, from: data)
+        let decoder = JSONDecoder()
+        let infos = try decoder.decode([NutritionInfo].self, from: data)
         
         return infos
     }
