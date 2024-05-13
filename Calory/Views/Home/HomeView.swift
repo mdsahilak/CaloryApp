@@ -20,6 +20,25 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Divider()
+                
+                RingView(currentValue: 0.7, totalValue: 1.0, lineWidth: 25.0)
+                    .frame(width: 250, height: 250, alignment: .center)
+                    .padding()
+                    .overlay(alignment: .center) {
+                        VStack {
+                            Text("350")
+                                .font(.largeTitle)
+                                .bold()
+                            
+                            Text("/ 500 Calories")
+                                .font(.title3)
+                        }
+                        .padding()
+                    }
+                
+                Divider()
+                
                 HStack {
                     previousDayButton
                     
@@ -63,7 +82,7 @@ struct HomeView: View {
                     
                     ToolbarItem(placement: .topBarTrailing) {
                         Button(action: addItem) {
-                            Label("Add Item", systemImage: "chart.bar.xaxis")
+                            Label("Weight", systemImage: "figure.arms.open")
                         }
                     }
                 }

@@ -11,5 +11,11 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var currentDate: Date = .now
     
+    func goBackToPreviousDay() {
+        
+    }
     
+    func moveToNextDay() {
+        
+    }
 }
