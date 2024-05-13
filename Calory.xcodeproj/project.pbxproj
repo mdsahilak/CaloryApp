@@ -11,6 +11,7 @@
 		417240C22BF25F480046B7C2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417240C12BF25F480046B7C2 /* SignupView.swift */; };
 		4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */; };
 		BADC62932BF2B47A00B347B9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */; };
+		BADC62972BF2B97900B347B9 /* TappedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */; };
 		BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */; };
 		BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBC2BE927A70051ED40 /* ContentView.swift */; };
 		BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBE2BE927A70051ED40 /* Item.swift */; };
@@ -31,6 +32,7 @@
 		417240C12BF25F480046B7C2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNutritionView.swift; sourceTree = "<group>"; };
 		BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedButtonStyle.swift; sourceTree = "<group>"; };
 		BAF9EDB72BE927A70051ED40 /* Calory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryApp.swift; sourceTree = "<group>"; };
 		BAF9EDBC2BE927A70051ED40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		BADC62942BF2B7A800B347B9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BADC62952BF2B96500B347B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BAF9EDAE2BE927A70051ED40 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +113,7 @@
 				BADC628F2BF2B45A00B347B9 /* ViewModels */,
 				BAF9EDCE2BE943B20051ED40 /* Networking */,
 				BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */,
+				BADC62952BF2B96500B347B9 /* Helpers */,
 				BAF9EDC02BE927A80051ED40 /* Assets.xcassets */,
 				BAF9EDC52BE927A80051ED40 /* Calory.entitlements */,
 				BAF9EDC62BE927A80051ED40 /* Info.plist */,
@@ -133,7 +152,7 @@
 		BAF9EDDC2BEA7ABB0051ED40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
+				BADC62942BF2B7A800B347B9 /* Home */,
 				BAF9EDE22BEA81700051ED40 /* AddFood.swift */,
 				BAF9EDE42BEA81F40051ED40 /* FoodEditor.swift */,
 				4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */,
@@ -235,6 +254,7 @@
 				BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */,
 				417240C02BF25ED30046B7C2 /* LoginView.swift in Sources */,
 				BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */,
+				BADC62972BF2B97900B347B9 /* TappedButtonStyle.swift in Sources */,
 				BADC62932BF2B47A00B347B9 /* HomeViewModel.swift in Sources */,
 				BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */,
 			);

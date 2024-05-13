@@ -10,6 +10,8 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
+    @StateObject private var vm: HomeViewModel = HomeViewModel()
+    
     @Query private var meals: [FoodEntry]
     
     @State private var selectedMeal: FoodEntry?
@@ -18,23 +20,50 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-
+                HStack {
+                    previousDayButton
+                    
+                    Spacer()
+                    
+                    DatePicker("Date:", selection: $vm.currentDate, displayedComponents: [.date])
+                        .labelsHidden()
+                    
+                    Spacer()
+                    
+                    nextDayButton
+                }
+                .padding(.horizontal)
+                
                 List(filteredMeals, id: \.id) { meal in
                     NavigationLink(destination: FoodEditor(nutritionInfo: NutritionInfo(name: meal.name, calories: meal.calories, serving: meal.serving, fat: meal.fat, protein: meal.protein, carbohydrates: meal.carbohydrates))) {
-                                            MealRow(meal: meal)
-                                            .onTapGesture {
-                                                selectedMeal = meal
-                                            }
+                        MealRow(meal: meal)
+                            .onTapGesture {
+                                selectedMeal = meal
+                            }
                     }
                 }
-                .navigationTitle("Daily Nutritions")
+                .animation(.easeInOut, value: filteredMeals)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Your Daily Nutrition")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            
+                        } label: {
+                            Label("Settings", systemImage: "slider.horizontal.3")
+                        }
+
                     }
-                    ToolbarItem {
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
                         Button(action: addItem) {
                             Label("Add Item", systemImage: "plus")
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "chart.bar.xaxis")
                         }
                     }
                 }
@@ -46,13 +75,15 @@ struct HomeView: View {
     }
     
     var filteredMeals: [FoodEntry] {
-        meals
+        meals.filter({ meal in
+            Calendar.current.isDate(meal.timestamp, equalTo: vm.currentDate, toGranularity: .day)
+        })
     }
     
     private func addItem() {
         showMealBuilder = true
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -60,11 +91,35 @@ struct HomeView: View {
             }
         }
     }
+    
+    private var nextDayButton: some View {
+        Button(action: {
+            let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: vm.currentDate)
+            vm.currentDate = nextDate ?? Date()
+        }, label: {
+            Image(systemName: "arrow.right")
+                .padding()
+                .frame(width: 44, height: 44, alignment: .center)
+        })
+        .buttonStyle(TappedButtonStyle())
+    }
+    
+    private var previousDayButton: some View {
+        Button(action: {
+            let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: vm.currentDate)
+            vm.currentDate = previousDate ?? Date()
+        }, label: {
+            Image(systemName: "arrow.left")
+                .padding()
+                .frame(width: 44, height: 44, alignment: .center)
+        })
+        .buttonStyle(TappedButtonStyle())
+    }
 }
 
 struct MealRow: View {
     let meal: FoodEntry
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -88,11 +143,6 @@ struct MealRow: View {
                 }
                 .padding(.leading, 10)
                 Spacer()
-                Button(action: {
-                    // Actions for the 3-dot button
-                }) {
-                    Image(systemName: "ellipsis")
-                }
             }
             .padding(.vertical, 10)
             HStack(spacing: 10) { // Add spacing between the nutrient views
@@ -109,7 +159,7 @@ struct NutrientView: View {
     let label: String
     let value: Double
     let color: Color
-
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
