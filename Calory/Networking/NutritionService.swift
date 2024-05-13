@@ -30,7 +30,7 @@ final class NutritionService {
         
         let decoder = JSONDecoder()
         let infos = try decoder.decode([NutritionInfo].self, from: data)
-        
+        print("DAPI response: \(infos)")
         return infos
     }
 }
