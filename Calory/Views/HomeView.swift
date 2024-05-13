@@ -13,20 +13,11 @@ struct HomeView: View {
     @Query private var meals: [FoodEntry]
     
     @State private var selectedMeal: FoodEntry?
-    @State private var showMealBuilder = false  // Correctly reintroduced
-    @State private var selectedMealType = "Breakfast"
-    let mealTypes = ["Breakfast", "Lunch", "Dinner"]
+    @State private var showMealBuilder = false
     
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Meal Type", selection: $selectedMealType) {
-                    ForEach(mealTypes, id: \.self) { mealType in
-                        Text(mealType).tag(mealType)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
 
                 List(filteredMeals, id: \.id) { meal in
                     NavigationLink(destination: FoodEditor(nutritionInfo: NutritionInfo(name: meal.name, calories: meal.calories, serving: meal.serving, fat: meal.fat, protein: meal.protein, carbohydrates: meal.carbohydrates))) {
@@ -55,7 +46,7 @@ struct HomeView: View {
     }
     
     var filteredMeals: [FoodEntry] {
-        meals.filter { $0.mealType == selectedMealType }
+        meals
     }
     
     private func addItem() {

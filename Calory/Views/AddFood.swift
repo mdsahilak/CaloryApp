@@ -13,21 +13,11 @@ struct AddFood: View {
     
     @State private var searchText: String = ""
     @State private var foodItems: [NutritionInfo] = []
-    @State private var selectedMealType = "Breakfast"
-    let mealTypes = ["Breakfast", "Lunch", "Dinner"]
 
     var body: some View {
         NavigationView {
             VStack {
                 SearchBar.padding([.leading, .trailing, .top])
-                
-                Picker("Meal Type", selection: $selectedMealType) {
-                    ForEach(mealTypes, id: \.self) { type in
-                        Text(type).tag(type)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
                 
                 ScrollView {
                     LazyVStack(spacing: 20) {
@@ -45,17 +35,11 @@ struct AddFood: View {
     func FoodItemRow(item: NutritionInfo) -> some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("pineapple") // Placeholder image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-
                 VStack(alignment: .leading) {
                     Text(item.name)
                         .font(.headline)
                     HStack {
-                        Image(systemName: "flame.fill") // Fire icon
+                        Image(systemName: "flame.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 12, height: 12) // Resize to make the icon smaller
@@ -69,7 +53,7 @@ struct AddFood: View {
                 Spacer()
                 
                 Button(action: {
-                    let entry = FoodEntry(food: item, mealType: selectedMealType)
+                    let entry = FoodEntry(food: item)
                     modelContext.insert(entry)
                     dismiss()
                 }) {
