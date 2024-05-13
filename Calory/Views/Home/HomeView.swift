@@ -54,7 +54,7 @@ struct HomeView: View {
                 .padding(.horizontal)
                 
                 List(filteredMeals, id: \.id) { meal in
-                    NavigationLink(destination: FoodEditor(nutritionInfo: NutritionInfo(name: meal.name, calories: meal.calories, serving: meal.serving, fat: meal.fat, protein: meal.protein, carbohydrates: meal.carbohydrates))) {
+                    NavigationLink(destination: FoodEditorView(nutritionInfo: NutritionInfo(name: meal.name, calories: meal.calories, serving: meal.serving, fat: meal.fat, protein: meal.protein, carbohydrates: meal.carbohydrates))) {
                         MealRow(meal: meal)
                             .onTapGesture {
                                 selectedMeal = meal

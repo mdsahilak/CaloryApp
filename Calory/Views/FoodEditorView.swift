@@ -1,5 +1,5 @@
 //
-//  FoodEditor.swift
+//  FoodEditorView.swift
 //  Calory
 //
 //  Created by Muhammad Waseem on 09/05/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodEditor: View {
+struct FoodEditorView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var nutritionInfo: NutritionInfo
 
@@ -129,7 +129,7 @@ struct ContentViewPreview: View {
     var body: some View {
         Group {
             if let info = nutritionInfo {
-                FoodEditor(nutritionInfo: info)
+                FoodEditorView(nutritionInfo: info)
             } else {
                 Text("Loading...")
                     .onAppear {

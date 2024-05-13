@@ -23,19 +23,18 @@ final class FoodEntry: Identifiable {
     var protein: Double
     var carbohydrates: Double
     
-    var mealType: String
-    
     var debugInfo: String {
         return "\(serving)g of \(name) has \(calories) calories. The macros are - protein: \(protein)g, carbs: \(carbohydrates)g & fats: \(fat)g"
     }
     
-    init(id: String = UUID().uuidString, timestamp: Date = Date(), food: NutritionInfo, mealType: String = "lunch") {
+    init(id: String = UUID().uuidString, timestamp: Date = Date(), food: NutritionInfo) {
         self.id = id
         self.timestamp = timestamp
-        self.mealType = mealType
         self.name = food.name
+        
         self.calories = food.calories
         self.serving = food.serving
+        
         self.fat = food.fat
         self.protein = food.protein
         self.carbohydrates = food.carbohydrates
