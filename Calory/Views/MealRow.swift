@@ -41,9 +41,9 @@ struct MealRow: View {
             .padding(.vertical, 10)
             
             HStack(spacing: 10) { // Add spacing between the nutrient views
-                MacroBarView(label: "Protein", value: meal.protein, color: .green)
-                MacroBarView(label: "Carbs", value: meal.carbohydrates, color: .purple)
-                MacroBarView(label: "Fat", value: meal.fat, color: .orange)
+                MacroBarView(label: "Protein", value: meal.protein, ratio: meal.proteinRatio, color: .green)
+                MacroBarView(label: "Carbs", value: meal.carbohydrates, ratio: meal.carbRatio, color: .yellow)
+                MacroBarView(label: "Fat", value: meal.fat, ratio: meal.fatRatio, color: .purple)
             }
             .padding(.horizontal, 10) // Adds padding on the left and right of the row
         }
@@ -53,15 +53,17 @@ struct MealRow: View {
 struct MacroBarView: View {
     let label: String
     let value: Double
+    let ratio: Double
     let color: Color
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                ProgressView(value: value, total: 100) // Assume 100g is max for the demo
+                ProgressView(value: ratio)
                     .progressViewStyle(LinearProgressViewStyle(tint: color))
-                    .frame(width: geometry.size.width) // Full width of the section
-                Text("\(value, specifier: "%.1f") g \(label)")
+                    .frame(width: geometry.size.width)
+                
+                Text("\(value, specifier: "%.0f")g \(label)")
                     .font(.caption)
             }
         }

@@ -50,9 +50,12 @@ struct FoodEditorView: View {
                     
                     Divider()
                     
-                    proteinField
-                    carbsField
-                    fatsField
+                    VStack {
+                        proteinField
+                        carbsField
+                        fatsField
+                    }
+                    .animation(.easeInOut, value: entry)
                     
                     Divider()
                     
@@ -123,7 +126,7 @@ struct FoodEditorView: View {
             .font(.headline)
             .foregroundColor(.gray)
             
-            ProgressView(value: 1, total: 1)
+            ProgressView(value: entry.proteinRatio)
                 .accentColor(.green)
         }
     }
@@ -151,7 +154,7 @@ struct FoodEditorView: View {
             .font(.headline)
             .foregroundColor(.gray)
             
-            ProgressView(value: 1, total: 1)
+            ProgressView(value: entry.carbRatio)
                 .accentColor(.yellow)
         }
     }
@@ -179,7 +182,7 @@ struct FoodEditorView: View {
             .font(.headline)
             .foregroundColor(.gray)
             
-            ProgressView(value: 1, total: 1)
+            ProgressView(value: entry.fatRatio)
                 .accentColor(.purple)
         }
     }

@@ -49,6 +49,11 @@ final class FoodEntry: Identifiable {
         self.protein = food.protein
         self.carbohydrates = food.carbohydrates
     }
+    
+    var macroTotal: Double { protein + carbohydrates + fat }
+    var proteinRatio: Double { protein / macroTotal }
+    var carbRatio: Double { carbohydrates / macroTotal }
+    var fatRatio: Double { fat / macroTotal }
 }
 
 extension FoodEntry {
