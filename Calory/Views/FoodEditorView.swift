@@ -8,82 +8,162 @@
 import SwiftUI
 
 struct FoodEditorView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var nutritionInfo: NutritionInfo
+    @Environment(\.dismiss) var dismiss
+    
+    @Bindable var entry: FoodEntry
 
     var body: some View {
         VStack {
-            // Custom Navigation Bar
-            HStack {
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(.black)
-                        .padding()
-                }
-
-                Spacer()
-                Text("Nutrition Details")
-                    .font(.title)
-                    .fontWeight(.bold)
-
-                Spacer()
-
-                Button(action: {
-                    // Placeholder for extended menu action
-                }) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.black)
-                        .padding()
-                }
-            }
-
-            Image("pineapple") // Placeholder image at the top of the screen
+            Image(systemName: "photo.artframe")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 200)
-                .cornerRadius(10)
-                .padding(.horizontal)
-
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    Text(nutritionInfo.name)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(nutritionInfo.serving, specifier: "%.1f")g")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                }
-
-                HStack {
-                    Text("Nutritional Value")
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(.gray)
+                .padding()
+            
+            Divider()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        TextField("Food Title", text: $entry.name)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        HStack {
+                            TextField("Size", value: $entry.serving, format: .number)
+                                .textFieldStyle(.roundedBorder)
+                                .frame(width: 70)
+                            
+                            Text("g")
+                        }
                         .font(.headline)
                         .foregroundColor(.gray)
-                    Spacer()
-                    Text("\(nutritionInfo.calories, specifier: "%.1f") Kcal")
+                    }
+                    
+                    Divider()
+                    
+                    proteinField
+                    carbsField
+                    fatsField
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Total Calories")
+                            .font(.headline)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            TextField("Size", value: $entry.calories, format: .number)
+                                .textFieldStyle(.roundedBorder)
+                                .frame(width: 70)
+                            
+                            Text("c")
+                        }
                         .font(.headline)
                         .foregroundColor(.gray)
+                    }
+                    
+                    Divider()
+                    
                 }
-                .padding(.bottom, 10)
-
-                // Nutrition breakdown rows for Protein, Carbs, and Fat
-                NutritionRow(label: "Protein", value: nutritionInfo.protein, total: totalNutritionalValue, icon: "leaf.fill", color: .green)
-                NutritionRow(label: "Carbs", value: nutritionInfo.carbohydrates, total: totalNutritionalValue, icon: "drop.fill", color: .purple)
-                NutritionRow(label: "Fat", value: nutritionInfo.fat, total: totalNutritionalValue, icon: "flame.fill", color: .orange)
+                .padding()
             }
-            .padding()
 
             Spacer()
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        .navigationTitle("Edit Food")
     }
 
     // Compute the total nutritional value for progress calculations
     var totalNutritionalValue: Double {
-        nutritionInfo.protein + nutritionInfo.carbohydrates + nutritionInfo.fat
+        entry.protein + entry.carbohydrates + entry.fat
+    }
+    
+    private var proteinField: some View {
+        VStack {
+            HStack {
+                Image(systemName: "dumbbell.fill")
+                    .foregroundColor(.green)
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing)
+                
+                Text("Protein")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                
+                Spacer()
+                
+                TextField("Protein", value: $entry.protein, format: .number)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 70)
+                
+                Text("g")
+            }
+            .font(.headline)
+            .foregroundColor(.gray)
+            
+            ProgressView(value: 1, total: 1)
+                .accentColor(.green)
+        }
+    }
+    
+    private var carbsField: some View {
+        VStack {
+            HStack {
+                Image(systemName: "flame.fill")
+                    .foregroundColor(.yellow)
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing)
+                
+                Text("Carbohydrates")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                
+                Spacer()
+                
+                TextField("Carbohydrates", value: $entry.carbohydrates, format: .number)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 70)
+                
+                Text("g")
+            }
+            .font(.headline)
+            .foregroundColor(.gray)
+            
+            ProgressView(value: 1, total: 1)
+                .accentColor(.yellow)
+        }
+    }
+    
+    private var fatsField: some View {
+        VStack {
+            HStack {
+                Image(systemName: "circle.hexagongrid")
+                    .foregroundColor(.purple)
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing)
+                
+                Text("Fat")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                
+                Spacer()
+                
+                TextField("Fat", value: $entry.fat, format: .number)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 70)
+                
+                Text("g")
+            }
+            .font(.headline)
+            .foregroundColor(.gray)
+            
+            ProgressView(value: 1, total: 1)
+                .accentColor(.purple)
+        }
     }
 }
 
@@ -106,6 +186,7 @@ struct NutritionRow: View {
                     Text(label)
                         .font(.headline)
                         .foregroundColor(.gray)
+                    
                     Spacer()
                     Text("\(percentageOfTotal(value: value, total: total), specifier: "%.1f")%")
                         .font(.headline)
@@ -121,30 +202,4 @@ struct NutritionRow: View {
     func percentageOfTotal(value: Double, total: Double) -> Double {
             (value / total) * 100
         }
-}
-
-struct ContentViewPreview: View {
-    @State private var nutritionInfo: NutritionInfo?
-
-    var body: some View {
-        Group {
-            if let info = nutritionInfo {
-                FoodEditorView(nutritionInfo: info)
-            } else {
-                Text("Loading...")
-                    .onAppear {
-                        fetchNutritionInfo()
-                    }
-            }
-        }
-    }
-
-    private func fetchNutritionInfo() {
-        // Simulating async data fetching
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            // Sample nutrition info data
-            let sampleNutritionInfo = NutritionInfo(name: "Sample Food", calories: 200, serving: 100, fat: 10, protein: 20, carbohydrates: 30)
-            self.nutritionInfo = sampleNutritionInfo
-        }
-    }
 }
