@@ -100,6 +100,7 @@ struct HomeView: View {
         }
         .sheet(isPresented: $vm.showCharts, content: {
             ChartsView()
+                .presentationDetents([.fraction(0.44)])
         })
         .sheet(isPresented: $vm.showMealBuilder) {
             AddFoodView()

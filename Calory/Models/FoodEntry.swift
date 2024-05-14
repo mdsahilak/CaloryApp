@@ -64,4 +64,10 @@ extension FoodEntry {
             entry.timestamp > today.startOfDay && entry.timestamp < today.endOfDay
         }
     }
+    
+    static func datePredicate(for date: Date) -> Predicate<FoodEntry> {
+        return #Predicate { entry in
+            entry.timestamp > date.startOfDay && entry.timestamp < date.endOfDay
+        }
+    }
 }
