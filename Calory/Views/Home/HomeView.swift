@@ -87,7 +87,7 @@ struct HomeView: View {
             }
         }
         .sheet(isPresented: $showMealBuilder) {
-            AddFood() // Ensure you have an AddFood view defined
+            AddFoodView() // Ensure you have an AddFood view defined
         }
     }
     

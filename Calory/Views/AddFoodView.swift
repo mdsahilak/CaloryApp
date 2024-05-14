@@ -1,5 +1,5 @@
 //
-//  AddFood.swift
+//  AddFoodView.swift
 //  Calory
 //
 //  Created by Muhammad Waseem on 09/05/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddFood: View {
+struct AddFoodView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
     
@@ -15,17 +15,17 @@ struct AddFood: View {
     @State private var foodItems: [NutritionInfo] = []
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                SearchBar.padding([.leading, .trailing, .top])
+                SearchBar
+                    .padding([.leading, .trailing, .top])
                 
-                ScrollView {
-                    LazyVStack(spacing: 20) {
-                        ForEach(foodItems, id: \.name) { item in
+                List {
+                    ForEach(foodItems, id: \.name) { item in
+                        Section {
                             FoodItemRow(item: item)
                         }
                     }
-                    .padding(.horizontal)
                 }
                 .navigationBarTitle("Add Food", displayMode: .inline)
             }
@@ -36,51 +36,45 @@ struct AddFood: View {
         VStack(alignment: .leading) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(item.name)
-                        .font(.headline)
+                    Text(item.name.capitalized)
+                        .font(.title3)
+                        .bold()
+                    
                     HStack {
                         Image(systemName: "flame.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 12, height: 12) // Resize to make the icon smaller
+                            .frame(width: 13, height: 13)
                             .foregroundColor(.red)
-                        Text("\(item.calories, specifier: "%.1f") kcal - \(item.serving, specifier: "%.1f") G")
+                        
+                        Text("\(item.calories, specifier: "%.1f") kcal - \(item.serving, specifier: "%.1f") g")
                             .font(.subheadline)
                     }
                 }
-                .padding(.leading, 10) 
                 
                 Spacer()
                 
-                Button(action: {
-                    let entry = FoodEntry(food: item)
-                    modelContext.insert(entry)
-                    dismiss()
-                }) {
-                    Text("Add")
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-            }
-            
-            HStack {
-                NutrientView(label: "Protein", value: item.protein, color: .green)
-                NutrientView(label: "Carbs", value: item.carbohydrates, color: .purple)
-                NutrientView(label: "Fat", value: item.fat, color: .orange)
+                Label("Add", systemImage: "plus.circle.fill")
+                    .labelStyle(.iconOnly)
+                    .foregroundColor(.accentColor)
+                    .font(.title2)
+                    .onTapGesture {
+                        let entry = FoodEntry(food: item)
+                        modelContext.insert(entry)
+                        dismiss()
+                    }
             }
         }
         .padding()
-        .background(Color.white)
         .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
     }
     
     private var SearchBar: some View {
         HStack {
             TextField("Search food items", text: $searchText)
+                .onSubmit {
+                    fetchNutritionInfo()
+                }
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 .background(Color.gray.opacity(0.1))
@@ -91,9 +85,12 @@ struct AddFood: View {
                 fetchNutritionInfo()
             }) {
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(.accentColor)
+                    .padding()
+                    .frame(width: 44, height: 44, alignment: .center)
             }
-            .padding(.trailing, 10)
+            .buttonStyle(TappedButtonStyle())
+            .foregroundColor(.accentColor)
+            .disabled(searchText.isEmpty)
         }
     }
     
@@ -110,7 +107,7 @@ struct AddFood: View {
 
 struct AddFood_Previews: PreviewProvider {
     static var previews: some View {
-        AddFood()
+        AddFoodView()
             .modelContainer(for: FoodEntry.self, inMemory: true)
     }
 }

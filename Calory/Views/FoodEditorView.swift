@@ -131,7 +131,7 @@ struct FoodEditorView: View {
     private var carbsField: some View {
         VStack {
             HStack {
-                Image(systemName: "flame.fill")
+                Image(systemName: "water.waves")
                     .foregroundColor(.yellow)
                     .frame(width: 20, height: 20)
                     .padding(.trailing)

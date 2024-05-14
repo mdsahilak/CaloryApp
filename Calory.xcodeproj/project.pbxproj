@@ -23,7 +23,7 @@
 		BAF9EDD62BE94F1D0051ED40 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD52BE94F1D0051ED40 /* APIError.swift */; };
 		BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD72BE985D50051ED40 /* HomeView.swift */; };
 		BAF9EDDB2BEA79B50051ED40 /* FoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */; };
-		BAF9EDE32BEA81700051ED40 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE22BEA81700051ED40 /* AddFood.swift */; };
+		BAF9EDE32BEA81700051ED40 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE22BEA81700051ED40 /* AddFoodView.swift */; };
 		BAF9EDE52BEA81F40051ED40 /* FoodEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE42BEA81F40051ED40 /* FoodEditorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		BAF9EDD52BE94F1D0051ED40 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BAF9EDD72BE985D50051ED40 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntry.swift; sourceTree = "<group>"; };
-		BAF9EDE22BEA81700051ED40 /* AddFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFood.swift; sourceTree = "<group>"; };
+		BAF9EDE22BEA81700051ED40 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		BAF9EDE42BEA81F40051ED40 /* FoodEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				BADC62942BF2B7A800B347B9 /* Home */,
-				BAF9EDE22BEA81700051ED40 /* AddFood.swift */,
+				BAF9EDE22BEA81700051ED40 /* AddFoodView.swift */,
 				BAF9EDE42BEA81F40051ED40 /* FoodEditorView.swift */,
 			);
 			path = Views;
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				417240C22BF25F480046B7C2 /* SignupView.swift in Sources */,
-				BAF9EDE32BEA81700051ED40 /* AddFood.swift in Sources */,
+				BAF9EDE32BEA81700051ED40 /* AddFoodView.swift in Sources */,
 				4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */,
 				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,
 				BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */,
