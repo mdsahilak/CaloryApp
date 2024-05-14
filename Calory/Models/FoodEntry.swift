@@ -51,17 +51,6 @@ final class FoodEntry: Identifiable {
     }
 }
 
-
-extension Date {
-    var startOfDay: Date {
-        Calendar.current.startOfDay(for: self)
-    }
-    
-    var endOfDay: Date {
-        Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!.addingTimeInterval(-1)
-    }
-}
-
 extension FoodEntry {
     static func todayPredicate() -> Predicate<FoodEntry> {
         let today: Date = .now

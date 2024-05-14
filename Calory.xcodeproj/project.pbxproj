@@ -14,6 +14,8 @@
 		BADC62972BF2B97900B347B9 /* TappedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */; };
 		BADC62992BF2C71C00B347B9 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62982BF2C71C00B347B9 /* RingView.swift */; };
 		BADC629D2BF3043800B347B9 /* CalorieTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */; };
+		BADC62A12BF3191600B347B9 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A02BF3191600B347B9 /* Date+Helpers.swift */; };
+		BADC62A32BF3199300B347B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A22BF3199300B347B9 /* Constants.swift */; };
 		BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */; };
 		BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBC2BE927A70051ED40 /* ContentView.swift */; };
 		BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBE2BE927A70051ED40 /* Item.swift */; };
@@ -36,6 +38,8 @@
 		BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedButtonStyle.swift; sourceTree = "<group>"; };
 		BADC62982BF2C71C00B347B9 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieTargetView.swift; sourceTree = "<group>"; };
+		BADC62A02BF3191600B347B9 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		BADC62A22BF3199300B347B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BAF9EDB72BE927A70051ED40 /* Calory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryApp.swift; sourceTree = "<group>"; };
 		BAF9EDBC2BE927A70051ED40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */,
+				BADC62A02BF3191600B347B9 /* Date+Helpers.swift */,
+				BADC62A22BF3199300B347B9 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,6 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				417240C22BF25F480046B7C2 /* SignupView.swift in Sources */,
+				BADC62A32BF3199300B347B9 /* Constants.swift in Sources */,
+				BADC62A12BF3191600B347B9 /* Date+Helpers.swift in Sources */,
 				BAF9EDE32BEA81700051ED40 /* AddFoodView.swift in Sources */,
 				4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */,
 				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,

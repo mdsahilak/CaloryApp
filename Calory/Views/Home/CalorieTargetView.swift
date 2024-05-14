@@ -9,12 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct CalorieTargetView: View {
-    @AppStorage("calorie_target") private var calorieTarget: Double = 0.0
+    @AppStorage(Constants.calorieTargetKey) private var calorieTarget: Double = 0.0
     @Query(filter: FoodEntry.todayPredicate()) private var meals: [FoodEntry]
     
     var body: some View {
         RingView(currentValue: caloriesConsumed, totalValue: calorieTarget, lineWidth: 25.0)
             .frame(width: 250, height: 250, alignment: .center)
+            .foregroundColor(.primary)
             .padding()
             .overlay(alignment: .center) {
                 VStack {

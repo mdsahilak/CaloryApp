@@ -12,6 +12,8 @@ struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var vm: HomeViewModel = HomeViewModel()
     
+    @AppStorage(Constants.calorieTargetKey) private var calorieTarget: Double = 0.0
+    
     @Query(sort: \FoodEntry.timestamp, order: .reverse) private var meals: [FoodEntry]
     
     @State private var showMealBuilder = false
@@ -22,7 +24,12 @@ struct HomeView: View {
             VStack {
                 Divider()
                 
-                CalorieTargetView()
+                Button(action: {
+                    vm.showCalorieTargetEditor.toggle()
+                }, label: {
+                    CalorieTargetView()
+                })
+                    
                 
                 Divider()
                 
@@ -39,6 +46,11 @@ struct HomeView: View {
                     nextDayButton
                 }
                 .padding(.horizontal)
+                .alert("Daily Calorie Target", isPresented: $vm.showCalorieTargetEditor) {
+                    TextField("Enter Target", value: $calorieTarget, format: .number)
+                } message: {
+                    Text("Please enter the daily amount of calories you want to consume")
+                }
                 
                 List {
                     ForEach(filteredMeals, id: \.id) { meal in
@@ -61,7 +73,7 @@ struct HomeView: View {
                         Button {
                             
                         } label: {
-                            Label("Settings", systemImage: "slider.horizontal.3")
+                            Label("Charts", systemImage: "chart.xyaxis.line")
                         }
 
                     }
@@ -112,24 +124,22 @@ struct HomeView: View {
         }
     }
     
-    private var nextDayButton: some View {
+    private var previousDayButton: some View {
         Button(action: {
-            let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: vm.currentDate)
-            vm.currentDate = nextDate ?? Date()
+            vm.goBackToPreviousDay()
         }, label: {
-            Image(systemName: "arrow.right")
+            Image(systemName: "arrow.left")
                 .padding()
                 .frame(width: 44, height: 44, alignment: .center)
         })
         .buttonStyle(TappedButtonStyle())
     }
     
-    private var previousDayButton: some View {
+    private var nextDayButton: some View {
         Button(action: {
-            let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: vm.currentDate)
-            vm.currentDate = previousDate ?? Date()
+            vm.moveToNextDay()
         }, label: {
-            Image(systemName: "arrow.left")
+            Image(systemName: "arrow.right")
                 .padding()
                 .frame(width: 44, height: 44, alignment: .center)
         })
