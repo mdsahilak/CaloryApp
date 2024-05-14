@@ -12,7 +12,7 @@ struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var vm: HomeViewModel = HomeViewModel()
     
-    @Query private var meals: [FoodEntry]
+    @Query(sort: \FoodEntry.name, order: .reverse) private var meals: [FoodEntry]
     
     @State private var showMealBuilder = false
     
@@ -140,16 +140,19 @@ struct MealRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("pineapple") // Placeholder for meal image
+                meal.image
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .aspectRatio(contentMode: .fill)
+                    .foregroundColor(.primary)
+                    .clipShape(Circle())
+                    .frame(width: 50, alignment: .center)
+                    
+                
                 VStack(alignment: .leading) {
                     Text(meal.name)
                         .font(.headline)
                     HStack {
-                        Image(systemName: "flame.fill") // Fire icon
+                        Image(systemName: "flame.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 12, height: 12)
@@ -159,6 +162,7 @@ struct MealRow: View {
                     }
                 }
                 .padding(.leading, 10)
+                
                 Spacer()
             }
             .padding(.vertical, 10)

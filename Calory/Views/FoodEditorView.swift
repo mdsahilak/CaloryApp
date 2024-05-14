@@ -14,29 +14,22 @@ struct FoodEditorView: View {
     @Bindable var entry: FoodEntry
     
     @State private var pickerItem: PhotosPickerItem?
-    
-    private var imageView: Image {
-        if let data = entry.image, let uiImage = UIImage(data: data) {
-            Image(uiImage: uiImage)
-        } else {
-            Image(systemName: "photo.circle")
-        }
-    }
 
     var body: some View {
         VStack {
-            PhotosPicker(selection: $pickerItem, matching: .images) {
-                imageView
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 13))
-                    .padding()
-            }
-            
-            Divider()
-            
             ScrollView {
+                PhotosPicker(selection: $pickerItem, matching: .images) {
+                    entry.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .foregroundColor(.primary)
+                        .clipShape(Circle())
+                        .frame(maxHeight: 330, alignment: .center)
+                        .padding()
+                }
+                
+                Divider()
+                
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         TextField("Food Title", text: $entry.name)
@@ -93,7 +86,7 @@ struct FoodEditorView: View {
             Task {
                 if let loadedImageData = try? await pickerItem?.loadTransferable(type: Data.self) {
                     withAnimation(.easeInOut) {
-                        entry.image = loadedImageData
+                        entry.imageData = loadedImageData
                     }
                 } else {
                     print("Failed")

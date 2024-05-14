@@ -14,7 +14,7 @@ final class FoodEntry: Identifiable {
     
     var timestamp: Date
     
-    @Attribute(.externalStorage) var image: Data?
+    @Attribute(.externalStorage) var imageData: Data?
     
     var name: String
     var calories: Double
@@ -24,6 +24,14 @@ final class FoodEntry: Identifiable {
     var fat: Double
     var protein: Double
     var carbohydrates: Double
+    
+    var image: Image {
+        if let data = imageData, let uiImage = UIImage(data: data) {
+            Image(uiImage: uiImage)
+        } else {
+            Image(systemName: "photo.circle")
+        }
+    }
     
     var debugInfo: String {
         return "\(serving)g of \(name) has \(calories) calories. The macros are - protein: \(protein)g, carbs: \(carbohydrates)g & fats: \(fat)g"
