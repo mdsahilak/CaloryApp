@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+// Common Calorie Target ring for both homescreen and widget
 struct CalorieTargetView: View {
     @AppStorage(Constants.calorieTargetKey) private var calorieTarget: Double = 0.0
     @Query(filter: FoodEntry.todayPredicate()) private var meals: [FoodEntry]

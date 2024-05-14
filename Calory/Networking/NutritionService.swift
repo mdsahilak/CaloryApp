@@ -20,6 +20,7 @@ final class NutritionService {
         return URLSession(configuration: config)
     }()
     
+    // Get Information from nutrition API
     public static func fetchNutritionInfo(for name: String) async throws -> [NutritionInfo] {
         guard var components = URLComponents(string: Self.baseURL) else { throw APIError.invalidURL }
         components.queryItems = [URLQueryItem(name: "query", value: name)]

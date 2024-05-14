@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Meal card in home view
 struct MealRow: View {
     let meal: FoodEntry
     

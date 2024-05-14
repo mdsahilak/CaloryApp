@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Custom hover style button designed for a touch interface
 struct TappedButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View model for the app's main home screen
 @MainActor
 class HomeViewModel: ObservableObject {
     @Published var showCalorieTargetEditor: Bool = false

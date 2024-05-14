@@ -8,6 +8,7 @@
 import SwiftUI
 import PhotosUI
 
+// Edit saved from from SwiftData store
 struct FoodEditorView: View {
     @Environment(\.dismiss) var dismiss
     

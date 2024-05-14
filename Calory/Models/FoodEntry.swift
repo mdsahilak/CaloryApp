@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+// Persistent data model to store information related user's logged meals
 @Model
 final class FoodEntry: Identifiable {
     @Attribute(.unique) var id: String

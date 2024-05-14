@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 import SwiftData
 
+// View for Last 7 days progress tracking
 struct ChartsView: View {
     @Environment(\.modelContext) private var modelContext
     

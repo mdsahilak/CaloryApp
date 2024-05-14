@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// UI for adding new food items from the database
 struct AddFoodView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss

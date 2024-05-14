@@ -7,6 +7,7 @@
 
 import Foundation
 
+// States of different errors related to networking data fetch
 enum APIError: Error {
     case invalidURL
     case invalidData
