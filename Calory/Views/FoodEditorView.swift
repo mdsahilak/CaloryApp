@@ -6,19 +6,33 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct FoodEditorView: View {
     @Environment(\.dismiss) var dismiss
     
     @Bindable var entry: FoodEntry
+    
+    @State private var pickerItem: PhotosPickerItem?
+    
+    private var imageView: Image {
+        if let data = entry.image, let uiImage = UIImage(data: data) {
+            Image(uiImage: uiImage)
+        } else {
+            Image(systemName: "photo.circle")
+        }
+    }
 
     var body: some View {
         VStack {
-            Image(systemName: "photo.artframe")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(.gray)
-                .padding()
+            PhotosPicker(selection: $pickerItem, matching: .images) {
+                imageView
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(.gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 13))
+                    .padding()
+            }
             
             Divider()
             
@@ -75,6 +89,17 @@ struct FoodEditorView: View {
             Spacer()
         }
         .navigationTitle("Edit Food")
+        .onChange(of: pickerItem) {
+            Task {
+                if let loadedImageData = try? await pickerItem?.loadTransferable(type: Data.self) {
+                    withAnimation(.easeInOut) {
+                        entry.image = loadedImageData
+                    }
+                } else {
+                    print("Failed")
+                }
+            }
+        }
     }
 
     // Compute the total nutritional value for progress calculations

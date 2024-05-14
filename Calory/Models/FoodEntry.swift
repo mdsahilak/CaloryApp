@@ -14,6 +14,8 @@ final class FoodEntry: Identifiable {
     
     var timestamp: Date
     
+    @Attribute(.externalStorage) var image: Data?
+    
     var name: String
     var calories: Double
     
