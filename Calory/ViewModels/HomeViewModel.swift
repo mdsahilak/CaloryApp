@@ -10,6 +10,11 @@ import SwiftUI
 @MainActor
 class HomeViewModel: ObservableObject {
     @Published var showCalorieTargetEditor: Bool = false
+    @Published var showMealBuilder = false
+    @Published var showCharts = false
+    
+    @Published var path: [FoodEntry] = []
+    
     @Published var currentDate: Date = .now
     
     func goBackToPreviousDay() {

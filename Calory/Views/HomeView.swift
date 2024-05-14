@@ -16,11 +16,8 @@ struct HomeView: View {
     
     @Query(sort: \FoodEntry.timestamp, order: .reverse) private var meals: [FoodEntry]
     
-    @State private var showMealBuilder = false
-    @State private var path: [FoodEntry] = []
-    
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $vm.path) {
             VStack {
                 Divider()
                 
@@ -71,7 +68,7 @@ struct HomeView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
-                            
+                            vm.showCharts.toggle()
                         } label: {
                             Label("Charts", systemImage: "chart.xyaxis.line")
                         }
@@ -81,7 +78,7 @@ struct HomeView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
-                                showMealBuilder.toggle()
+                                vm.showMealBuilder.toggle()
                             } label: {
                                 Label("Search Database", systemImage: "magnifyingglass")
                             }
@@ -90,7 +87,7 @@ struct HomeView: View {
                                 let entry = FoodEntry(food: .placeholder)
                                 modelContext.insert(entry)
                                 
-                                path.append(entry)
+                                vm.path.append(entry)
                             } label: {
                                 Label("Create Custom", systemImage: "applepencil")
                             }
@@ -101,7 +98,10 @@ struct HomeView: View {
                 }
             }
         }
-        .sheet(isPresented: $showMealBuilder) {
+        .sheet(isPresented: $vm.showCharts, content: {
+            ChartsView()
+        })
+        .sheet(isPresented: $vm.showMealBuilder) {
             AddFoodView()
         }
     }
@@ -110,10 +110,6 @@ struct HomeView: View {
         meals.filter({ meal in
             Calendar.current.isDate(meal.timestamp, equalTo: vm.currentDate, toGranularity: .day)
         })
-    }
-    
-    private func addItem() {
-        showMealBuilder = true
     }
     
     private func deleteItems(offsets: IndexSet) {
