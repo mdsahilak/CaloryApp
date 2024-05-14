@@ -12,29 +12,17 @@ struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var vm: HomeViewModel = HomeViewModel()
     
-    @Query(sort: \FoodEntry.name, order: .reverse) private var meals: [FoodEntry]
+    @Query(sort: \FoodEntry.timestamp, order: .reverse) private var meals: [FoodEntry]
     
     @State private var showMealBuilder = false
+    @State private var path: [FoodEntry] = []
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             VStack {
                 Divider()
                 
-                RingView(currentValue: 0.7, totalValue: 1.0, lineWidth: 25.0)
-                    .frame(width: 250, height: 250, alignment: .center)
-                    .padding()
-                    .overlay(alignment: .center) {
-                        VStack {
-                            Text("350")
-                                .font(.largeTitle)
-                                .bold()
-                            
-                            Text("/ 500 Calories")
-                                .font(.title3)
-                        }
-                        .padding()
-                    }
+                CalorieTargetView()
                 
                 Divider()
                 
@@ -52,16 +40,22 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 
-                List(filteredMeals, id: \.id) { meal in
-                    NavigationLink {
-                        FoodEditorView(entry: meal)
-                    } label: {
-                        MealRow(meal: meal)
+                List {
+                    ForEach(filteredMeals, id: \.id) { meal in
+                        Section {
+                            NavigationLink(value: meal) {
+                                MealRow(meal: meal)
+                            }
+                        }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .animation(.easeInOut, value: filteredMeals)
+                .animation(.linear, value: meals)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Your Daily Nutrition")
+                .navigationDestination(for: FoodEntry.self, destination: { entry in
+                    FoodEditorView(entry: entry)
+                })
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
@@ -72,22 +66,31 @@ struct HomeView: View {
 
                     }
                     
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: addItem) {
-                            Label("Weight", systemImage: "figure.arms.open")
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            Button {
+                                showMealBuilder.toggle()
+                            } label: {
+                                Label("Search Database", systemImage: "magnifyingglass")
+                            }
+                            
+                            Button {
+                                let entry = FoodEntry(food: .placeholder)
+                                modelContext.insert(entry)
+                                
+                                path.append(entry)
+                            } label: {
+                                Label("Create Custom", systemImage: "applepencil")
+                            }
+                        } label: {
+                            Label("Add TimeWave", systemImage: "plus")
                         }
                     }
                 }
             }
         }
         .sheet(isPresented: $showMealBuilder) {
-            AddFoodView() // Ensure you have an AddFood view defined
+            AddFoodView()
         }
     }
     

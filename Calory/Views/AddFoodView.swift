@@ -27,7 +27,7 @@ struct AddFoodView: View {
                         }
                     }
                 }
-                .navigationBarTitle("Add Food", displayMode: .inline)
+                .navigationBarTitle("Search Database", displayMode: .inline)
             }
         }
     }

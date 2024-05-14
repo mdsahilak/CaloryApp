@@ -40,7 +40,7 @@ final class FoodEntry: Identifiable {
     init(id: String = UUID().uuidString, timestamp: Date = Date(), food: NutritionInfo) {
         self.id = id
         self.timestamp = timestamp
-        self.name = food.name
+        self.name = food.name.capitalized
         
         self.calories = food.calories
         self.serving = food.serving
@@ -52,3 +52,22 @@ final class FoodEntry: Identifiable {
 }
 
 
+extension Date {
+    var startOfDay: Date {
+        Calendar.current.startOfDay(for: self)
+    }
+    
+    var endOfDay: Date {
+        Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!.addingTimeInterval(-1)
+    }
+}
+
+extension FoodEntry {
+    static func todayPredicate() -> Predicate<FoodEntry> {
+        let today: Date = .now
+        
+        return #Predicate { entry in
+            entry.timestamp > today.startOfDay && entry.timestamp < today.endOfDay
+        }
+    }
+}

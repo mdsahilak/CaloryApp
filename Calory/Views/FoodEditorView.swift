@@ -57,7 +57,7 @@ struct FoodEditorView: View {
                     Divider()
                     
                     HStack {
-                        Text("Total Calories")
+                        Text("Total Calories (kcal)")
                             .font(.headline)
                         
                         Spacer()
