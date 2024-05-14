@@ -16,6 +16,7 @@
 		BADC629D2BF3043800B347B9 /* CalorieTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */; };
 		BADC62A12BF3191600B347B9 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A02BF3191600B347B9 /* Date+Helpers.swift */; };
 		BADC62A32BF3199300B347B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A22BF3199300B347B9 /* Constants.swift */; };
+		BADC62A52BF31C7D00B347B9 /* MealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A42BF31C7D00B347B9 /* MealRow.swift */; };
 		BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */; };
 		BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBC2BE927A70051ED40 /* ContentView.swift */; };
 		BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBE2BE927A70051ED40 /* Item.swift */; };
@@ -40,6 +41,7 @@
 		BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieTargetView.swift; sourceTree = "<group>"; };
 		BADC62A02BF3191600B347B9 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		BADC62A22BF3199300B347B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BADC62A42BF31C7D00B347B9 /* MealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRow.swift; sourceTree = "<group>"; };
 		BAF9EDB72BE927A70051ED40 /* Calory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryApp.swift; sourceTree = "<group>"; };
 		BAF9EDBC2BE927A70051ED40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,16 +77,6 @@
 				BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		BADC62942BF2B7A800B347B9 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
-				BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */,
-				BADC62982BF2C71C00B347B9 /* RingView.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		BADC62952BF2B96500B347B9 /* Helpers */ = {
@@ -161,7 +153,10 @@
 		BAF9EDDC2BEA7ABB0051ED40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BADC62942BF2B7A800B347B9 /* Home */,
+				BAF9EDD72BE985D50051ED40 /* HomeView.swift */,
+				BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */,
+				BADC62982BF2C71C00B347B9 /* RingView.swift */,
+				BADC62A42BF31C7D00B347B9 /* MealRow.swift */,
 				BAF9EDE22BEA81700051ED40 /* AddFoodView.swift */,
 				BAF9EDE42BEA81F40051ED40 /* FoodEditorView.swift */,
 			);
@@ -253,6 +248,7 @@
 				417240C22BF25F480046B7C2 /* SignupView.swift in Sources */,
 				BADC62A32BF3199300B347B9 /* Constants.swift in Sources */,
 				BADC62A12BF3191600B347B9 /* Date+Helpers.swift in Sources */,
+				BADC62A52BF31C7D00B347B9 /* MealRow.swift in Sources */,
 				BAF9EDE32BEA81700051ED40 /* AddFoodView.swift in Sources */,
 				4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */,
 				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,
