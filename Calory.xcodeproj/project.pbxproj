@@ -16,6 +16,20 @@
 		BADC62A52BF31C7D00B347B9 /* MealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A42BF31C7D00B347B9 /* MealRow.swift */; };
 		BADC62A72BF3201900B347B9 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A62BF3201900B347B9 /* ChartsView.swift */; };
 		BADC62A92BF3282C00B347B9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A82BF3282C00B347B9 /* UserDefaults.swift */; };
+		BADC62B12BF34A3F00B347B9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC62B02BF34A3E00B347B9 /* WidgetKit.framework */; };
+		BADC62B32BF34A3F00B347B9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC62B22BF34A3F00B347B9 /* SwiftUI.framework */; };
+		BADC62B62BF34A3F00B347B9 /* CaloryWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62B52BF34A3F00B347B9 /* CaloryWidgetBundle.swift */; };
+		BADC62B82BF34A3F00B347B9 /* CaloryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62B72BF34A3F00B347B9 /* CaloryWidget.swift */; };
+		BADC62BA2BF34A4000B347B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADC62B92BF34A4000B347B9 /* Assets.xcassets */; };
+		BADC62BE2BF34A4000B347B9 /* CaloryWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BADC62AE2BF34A3E00B347B9 /* CaloryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BADC62C42BF34BC900B347B9 /* FoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDDA2BEA79B50051ED40 /* FoodEntry.swift */; };
+		BADC62C52BF34BE000B347B9 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A02BF3191600B347B9 /* Date+Helpers.swift */; };
+		BADC62C62BF34BE000B347B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A22BF3199300B347B9 /* Constants.swift */; };
+		BADC62C72BF34BE000B347B9 /* TappedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */; };
+		BADC62C82BF34BE000B347B9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A82BF3282C00B347B9 /* UserDefaults.swift */; };
+		BADC62C92BF34C4B00B347B9 /* NutritionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD32BE948C70051ED40 /* NutritionInfo.swift */; };
+		BADC62CA2BF34C5B00B347B9 /* CalorieTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC629C2BF3043800B347B9 /* CalorieTargetView.swift */; };
+		BADC62CB2BF34C6200B347B9 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62982BF2C71C00B347B9 /* RingView.swift */; };
 		BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */; };
 		BAF9EDC12BE927A80051ED40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC02BE927A80051ED40 /* Assets.xcassets */; };
 		BAF9EDC42BE927A80051ED40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC32BE927A80051ED40 /* Preview Assets.xcassets */; };
@@ -28,6 +42,30 @@
 		BAF9EDE52BEA81F40051ED40 /* FoodEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDE42BEA81F40051ED40 /* FoodEditorView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BADC62BC2BF34A4000B347B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAF9EDAF2BE927A70051ED40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BADC62AD2BF34A3E00B347B9;
+			remoteInfo = CaloryWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BADC62BF2BF34A4000B347B9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BADC62BE2BF34A4000B347B9 /* CaloryWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedButtonStyle.swift; sourceTree = "<group>"; };
@@ -38,6 +76,14 @@
 		BADC62A42BF31C7D00B347B9 /* MealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRow.swift; sourceTree = "<group>"; };
 		BADC62A62BF3201900B347B9 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		BADC62A82BF3282C00B347B9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		BADC62AE2BF34A3E00B347B9 /* CaloryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaloryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADC62B02BF34A3E00B347B9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BADC62B22BF34A3F00B347B9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BADC62B52BF34A3F00B347B9 /* CaloryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryWidgetBundle.swift; sourceTree = "<group>"; };
+		BADC62B72BF34A3F00B347B9 /* CaloryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryWidget.swift; sourceTree = "<group>"; };
+		BADC62B92BF34A4000B347B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BADC62BB2BF34A4000B347B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADC62C32BF34B6500B347B9 /* CaloryWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaloryWidgetExtension.entitlements; sourceTree = "<group>"; };
 		BAF9EDB72BE927A70051ED40 /* Calory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryApp.swift; sourceTree = "<group>"; };
 		BAF9EDC02BE927A80051ED40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +101,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BADC62AB2BF34A3E00B347B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADC62B32BF34A3F00B347B9 /* SwiftUI.framework in Frameworks */,
+				BADC62B12BF34A3F00B347B9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAF9EDB42BE927A70051ED40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,11 +139,34 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		BADC62AF2BF34A3E00B347B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BADC62B02BF34A3E00B347B9 /* WidgetKit.framework */,
+				BADC62B22BF34A3F00B347B9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BADC62B42BF34A3F00B347B9 /* CaloryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BADC62B52BF34A3F00B347B9 /* CaloryWidgetBundle.swift */,
+				BADC62B72BF34A3F00B347B9 /* CaloryWidget.swift */,
+				BADC62B92BF34A4000B347B9 /* Assets.xcassets */,
+				BADC62BB2BF34A4000B347B9 /* Info.plist */,
+			);
+			path = CaloryWidget;
+			sourceTree = "<group>";
+		};
 		BAF9EDAE2BE927A70051ED40 = {
 			isa = PBXGroup;
 			children = (
+				BADC62C32BF34B6500B347B9 /* CaloryWidgetExtension.entitlements */,
 				BAF9EDCC2BE927FD0051ED40 /* README.md */,
 				BAF9EDB92BE927A70051ED40 /* Calory */,
+				BADC62B42BF34A3F00B347B9 /* CaloryWidget */,
+				BADC62AF2BF34A3E00B347B9 /* Frameworks */,
 				BAF9EDB82BE927A70051ED40 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF9EDB72BE927A70051ED40 /* Calory.app */,
+				BADC62AE2BF34A3E00B347B9 /* CaloryWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +240,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BADC62AD2BF34A3E00B347B9 /* CaloryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BADC62C22BF34A4000B347B9 /* Build configuration list for PBXNativeTarget "CaloryWidgetExtension" */;
+			buildPhases = (
+				BADC62AA2BF34A3E00B347B9 /* Sources */,
+				BADC62AB2BF34A3E00B347B9 /* Frameworks */,
+				BADC62AC2BF34A3E00B347B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CaloryWidgetExtension;
+			productName = CaloryWidgetExtension;
+			productReference = BADC62AE2BF34A3E00B347B9 /* CaloryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BAF9EDB62BE927A70051ED40 /* Calory */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAF9EDC92BE927A80051ED40 /* Build configuration list for PBXNativeTarget "Calory" */;
@@ -168,10 +264,12 @@
 				BAF9EDB32BE927A70051ED40 /* Sources */,
 				BAF9EDB42BE927A70051ED40 /* Frameworks */,
 				BAF9EDB52BE927A70051ED40 /* Resources */,
+				BADC62BF2BF34A4000B347B9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BADC62BD2BF34A4000B347B9 /* PBXTargetDependency */,
 			);
 			name = Calory;
 			productName = Calory;
@@ -188,6 +286,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					BADC62AD2BF34A3E00B347B9 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					BAF9EDB62BE927A70051ED40 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -207,11 +308,20 @@
 			projectRoot = "";
 			targets = (
 				BAF9EDB62BE927A70051ED40 /* Calory */,
+				BADC62AD2BF34A3E00B347B9 /* CaloryWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BADC62AC2BF34A3E00B347B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADC62BA2BF34A4000B347B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAF9EDB52BE927A70051ED40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +334,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BADC62AA2BF34A3E00B347B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADC62CB2BF34C6200B347B9 /* RingView.swift in Sources */,
+				BADC62C62BF34BE000B347B9 /* Constants.swift in Sources */,
+				BADC62B62BF34A3F00B347B9 /* CaloryWidgetBundle.swift in Sources */,
+				BADC62C52BF34BE000B347B9 /* Date+Helpers.swift in Sources */,
+				BADC62C72BF34BE000B347B9 /* TappedButtonStyle.swift in Sources */,
+				BADC62C42BF34BC900B347B9 /* FoodEntry.swift in Sources */,
+				BADC62CA2BF34C5B00B347B9 /* CalorieTargetView.swift in Sources */,
+				BADC62C82BF34BE000B347B9 /* UserDefaults.swift in Sources */,
+				BADC62C92BF34C4B00B347B9 /* NutritionInfo.swift in Sources */,
+				BADC62B82BF34A3F00B347B9 /* CaloryWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAF9EDB32BE927A70051ED40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,7 +377,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BADC62BD2BF34A4000B347B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BADC62AD2BF34A3E00B347B9 /* CaloryWidgetExtension */;
+			targetProxy = BADC62BC2BF34A4000B347B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BADC62C02BF34A4000B347B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CaloryWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YX56X85BZA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CaloryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CaloryWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uow.calory.Calory.CaloryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BADC62C12BF34A4000B347B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CaloryWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YX56X85BZA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CaloryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CaloryWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uow.calory.Calory.CaloryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BAF9EDC72BE927A80051ED40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +564,7 @@
 		BAF9EDCA2BE927A80051ED40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Calory/Calory.entitlements;
@@ -404,6 +596,7 @@
 		BAF9EDCB2BE927A80051ED40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Calory/Calory.entitlements;
@@ -435,6 +628,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BADC62C22BF34A4000B347B9 /* Build configuration list for PBXNativeTarget "CaloryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BADC62C02BF34A4000B347B9 /* Debug */,
+				BADC62C12BF34A4000B347B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BAF9EDB22BE927A70051ED40 /* Build configuration list for PBXProject "Calory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,9 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 @main
 struct CaloryApp: App {
+    @Environment(\.scenePhase) var phase
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             FoodEntry.self
@@ -29,5 +32,10 @@ struct CaloryApp: App {
                 .defaultAppStorage(.group ?? .standard)
         }
         .modelContainer(sharedModelContainer)
+        .onChange(of: phase) { _, newPhase in
+            if newPhase == .background {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
+        }
     }
 }
