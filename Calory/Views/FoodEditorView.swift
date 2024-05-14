@@ -87,6 +87,18 @@ struct FoodEditorView: View {
             Spacer()
         }
         .navigationTitle("Edit Food")
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                } label: {
+                    Label("Dismiss Keyboard", systemImage: "keyboard.chevron.compact.down.fill")
+                        .labelStyle(.iconOnly)
+                }
+            }
+        }
         .onChange(of: pickerItem) {
             Task {
                 if let loadedImageData = try? await pickerItem?.loadTransferable(type: Data.self) {
