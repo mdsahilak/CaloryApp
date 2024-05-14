@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		417240C02BF25ED30046B7C2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417240BF2BF25ED30046B7C2 /* LoginView.swift */; };
-		417240C22BF25F480046B7C2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417240C12BF25F480046B7C2 /* SignupView.swift */; };
-		4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */; };
 		BADC62932BF2B47A00B347B9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */; };
 		BADC62972BF2B97900B347B9 /* TappedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */; };
 		BADC62992BF2C71C00B347B9 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62982BF2C71C00B347B9 /* RingView.swift */; };
@@ -20,8 +17,6 @@
 		BADC62A72BF3201900B347B9 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A62BF3201900B347B9 /* ChartsView.swift */; };
 		BADC62A92BF3282C00B347B9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC62A82BF3282C00B347B9 /* UserDefaults.swift */; };
 		BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */; };
-		BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBC2BE927A70051ED40 /* ContentView.swift */; };
-		BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDBE2BE927A70051ED40 /* Item.swift */; };
 		BAF9EDC12BE927A80051ED40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC02BE927A80051ED40 /* Assets.xcassets */; };
 		BAF9EDC42BE927A80051ED40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF9EDC32BE927A80051ED40 /* Preview Assets.xcassets */; };
 		BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9EDD12BE945EF0051ED40 /* NutritionService.swift */; };
@@ -34,9 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		417240BF2BF25ED30046B7C2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		417240C12BF25F480046B7C2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNutritionView.swift; sourceTree = "<group>"; };
 		BADC62922BF2B47A00B347B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BADC62962BF2B97900B347B9 /* TappedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedButtonStyle.swift; sourceTree = "<group>"; };
 		BADC62982BF2C71C00B347B9 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -48,8 +40,6 @@
 		BADC62A82BF3282C00B347B9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BAF9EDB72BE927A70051ED40 /* Calory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF9EDBA2BE927A70051ED40 /* CaloryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloryApp.swift; sourceTree = "<group>"; };
-		BAF9EDBC2BE927A70051ED40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BAF9EDBE2BE927A70051ED40 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BAF9EDC02BE927A80051ED40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF9EDC32BE927A80051ED40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BAF9EDC52BE927A80051ED40 /* Calory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calory.entitlements; sourceTree = "<group>"; };
@@ -119,7 +109,6 @@
 				BAF9EDD92BEA790B0051ED40 /* Models */,
 				BADC628F2BF2B45A00B347B9 /* ViewModels */,
 				BAF9EDCE2BE943B20051ED40 /* Networking */,
-				BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */,
 				BADC62952BF2B96500B347B9 /* Helpers */,
 				BAF9EDC02BE927A80051ED40 /* Assets.xcassets */,
 				BAF9EDC52BE927A80051ED40 /* Calory.entitlements */,
@@ -167,18 +156,6 @@
 				BADC62A62BF3201900B347B9 /* ChartsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BAF9EDDD2BEA7ACA0051ED40 /* Boilerplate */ = {
-			isa = PBXGroup;
-			children = (
-				417240BF2BF25ED30046B7C2 /* LoginView.swift */,
-				417240C12BF25F480046B7C2 /* SignupView.swift */,
-				4192A2532BF00FE40012E3A8 /* DailyNutritionView.swift */,
-				BAF9EDBC2BE927A70051ED40 /* ContentView.swift */,
-				BAF9EDBE2BE927A70051ED40 /* Item.swift */,
-			);
-			path = Boilerplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,24 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417240C22BF25F480046B7C2 /* SignupView.swift in Sources */,
 				BADC62A32BF3199300B347B9 /* Constants.swift in Sources */,
 				BADC62A12BF3191600B347B9 /* Date+Helpers.swift in Sources */,
 				BADC62A52BF31C7D00B347B9 /* MealRow.swift in Sources */,
 				BAF9EDE32BEA81700051ED40 /* AddFoodView.swift in Sources */,
-				4192A2542BF00FE40012E3A8 /* DailyNutritionView.swift in Sources */,
 				BAF9EDD42BE948C70051ED40 /* NutritionInfo.swift in Sources */,
 				BAF9EDD82BE985D60051ED40 /* HomeView.swift in Sources */,
 				BADC629D2BF3043800B347B9 /* CalorieTargetView.swift in Sources */,
 				BADC62992BF2C71C00B347B9 /* RingView.swift in Sources */,
-				BAF9EDBD2BE927A70051ED40 /* ContentView.swift in Sources */,
-				BAF9EDBF2BE927A70051ED40 /* Item.swift in Sources */,
 				BAF9EDDB2BEA79B50051ED40 /* FoodEntry.swift in Sources */,
 				BAF9EDE52BEA81F40051ED40 /* FoodEditorView.swift in Sources */,
 				BADC62A92BF3282C00B347B9 /* UserDefaults.swift in Sources */,
 				BADC62A72BF3201900B347B9 /* ChartsView.swift in Sources */,
 				BAF9EDBB2BE927A70051ED40 /* CaloryApp.swift in Sources */,
-				417240C02BF25ED30046B7C2 /* LoginView.swift in Sources */,
 				BAF9EDD22BE945EF0051ED40 /* NutritionService.swift in Sources */,
 				BADC62972BF2B97900B347B9 /* TappedButtonStyle.swift in Sources */,
 				BADC62932BF2B47A00B347B9 /* HomeViewModel.swift in Sources */,
