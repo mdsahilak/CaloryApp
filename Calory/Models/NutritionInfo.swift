@@ -8,6 +8,8 @@
 import Foundation
 
 struct NutritionInfo: Identifiable, Codable {
+    static let placeholder = Self(name: "", calories: 0.0, serving: 0.0, fat: 0.0, protein: 0.0, carbohydrates: 0.0)
+    
     var id: String { name }
     
     var name: String

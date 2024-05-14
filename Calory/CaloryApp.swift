@@ -26,17 +26,7 @@ struct CaloryApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .onAppear {
-                    print(URL.applicationSupportDirectory)
-                }
-                .task {
-                    do {
-                        let items = try await NutritionService.fetchNutritionInfo(for: "biryani")
-                        print(items)
-                    } catch {
-                        print(error as NSError)
-                    }
-                }
+                .defaultAppStorage(.group ?? .standard)
         }
         .modelContainer(sharedModelContainer)
     }
