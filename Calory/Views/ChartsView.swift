@@ -38,7 +38,7 @@ struct ChartsView: View {
                     )
                 }
             }
-            .chartYAxisLabel("Last 7 Days (Total Calories)", position: .top, alignment: .center)
+            .chartYAxisLabel("Last 7 Days (Calories)", position: .top, alignment: .center)
             .chartYAxis(.hidden)
             .frame(minHeight: 130)
             .padding(.vertical)
