@@ -27,7 +27,4 @@ class HomeViewModel: ObservableObject {
         currentDate = nextDate ?? Date()
     }
     
-    func updateCalorieTarget(to value: Double) {
-        UserDefaults.standard.setValue(value, forKey: Constants.calorieTargetKey)
-    }
 }

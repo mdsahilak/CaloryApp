@@ -9,4 +9,5 @@ import Foundation
 
 enum Constants {
     static let calorieTargetKey = "calorie_target"
+    static let groupIdentifier = "group.uow.mobile"
 }
