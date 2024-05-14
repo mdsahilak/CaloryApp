@@ -40,6 +40,7 @@ struct FoodEditorView: View {
                         HStack {
                             TextField("Size", value: $entry.serving, format: .number)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.decimalPad)
                                 .frame(width: 70)
                             
                             Text("g")
@@ -68,6 +69,7 @@ struct FoodEditorView: View {
                         HStack {
                             TextField("Size", value: $entry.calories, format: .number)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.decimalPad)
                                 .frame(width: 70)
                             
                             Text("c")
@@ -119,6 +121,7 @@ struct FoodEditorView: View {
                 
                 TextField("Protein", value: $entry.protein, format: .number)
                     .textFieldStyle(.roundedBorder)
+                    .keyboardType(.decimalPad)
                     .frame(width: 70)
                 
                 Text("g")
@@ -147,6 +150,7 @@ struct FoodEditorView: View {
                 
                 TextField("Carbohydrates", value: $entry.carbohydrates, format: .number)
                     .textFieldStyle(.roundedBorder)
+                    .keyboardType(.decimalPad)
                     .frame(width: 70)
                 
                 Text("g")
@@ -175,6 +179,7 @@ struct FoodEditorView: View {
                 
                 TextField("Fat", value: $entry.fat, format: .number)
                     .textFieldStyle(.roundedBorder)
+                    .keyboardType(.decimalPad)
                     .frame(width: 70)
                 
                 Text("g")

@@ -40,12 +40,12 @@ struct MealRow: View {
             }
             .padding(.vertical, 10)
             
-            HStack(spacing: 10) { // Add spacing between the nutrient views
+            HStack(spacing: 10) {
                 MacroBarView(label: "Protein", value: meal.protein, ratio: meal.proteinRatio, color: .green)
                 MacroBarView(label: "Carbs", value: meal.carbohydrates, ratio: meal.carbRatio, color: .yellow)
                 MacroBarView(label: "Fat", value: meal.fat, ratio: meal.fatRatio, color: .purple)
             }
-            .padding(.horizontal, 10) // Adds padding on the left and right of the row
+            .padding(.horizontal, 10)
         }
     }
 }

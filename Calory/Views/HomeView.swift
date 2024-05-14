@@ -45,6 +45,7 @@ struct HomeView: View {
                 .padding(.horizontal)
                 .alert("Daily Calorie Target", isPresented: $vm.showCalorieTargetEditor) {
                     TextField("Enter Target", value: $calorieTarget, format: .number)
+                        .keyboardType(.decimalPad)
                 } message: {
                     Text("Please enter the daily amount of calories you want to consume")
                 }
