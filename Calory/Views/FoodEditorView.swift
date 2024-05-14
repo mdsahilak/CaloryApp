@@ -142,6 +142,7 @@ struct FoodEditorView: View {
             .foregroundColor(.gray)
             
             ProgressView(value: entry.proteinRatio)
+                .progressViewStyle(.linear)
                 .accentColor(.green)
         }
     }
@@ -171,6 +172,7 @@ struct FoodEditorView: View {
             .foregroundColor(.gray)
             
             ProgressView(value: entry.carbRatio)
+                .progressViewStyle(.linear)
                 .accentColor(.yellow)
         }
     }
@@ -200,6 +202,7 @@ struct FoodEditorView: View {
             .foregroundColor(.gray)
             
             ProgressView(value: entry.fatRatio)
+                .progressViewStyle(.linear)
                 .accentColor(.purple)
         }
     }
